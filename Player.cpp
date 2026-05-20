@@ -1,6 +1,13 @@
 #include "Player.h"
 #include "Engine\\Model.h"
 #include "Engine\\Input.h"
+#include "Bullet.h"
+
+namespace
+{
+	int WIN_WIDTH = 1500;
+	int WIN_HEIGHT = 800;
+}
 
 Player::Player(GameObject* parent)
 //親のポインタ、オブジェクトの名前
@@ -20,10 +27,16 @@ void Player::Update()
 	if (Input::IsKey(DIK_LEFT) || Input::IsKey(DIK_A))
 	{
 		tr_.position_.x = tr_.position_.x -= 0.5f;
+		
 	}
 	if (Input::IsKey(DIK_RIGHT) || Input::IsKey(DIK_D))
 	{
 		tr_.position_.x = tr_.position_.x += 0.5f;
+		
+	}
+	if (Input::IsKey(DIK_SPACE))
+	{
+		//Instantiate<Bullet>(this);
 	}
 }
 
