@@ -1,5 +1,6 @@
 #include "PlayScene.h"
 #include "Engine\\Model.h"//画像を読み込むヘッダー
+#include "Player.h"
 
 namespace
 {
@@ -15,6 +16,8 @@ void PlayScene::Initialize()
 {
 	hModel_ = Model::Load("Oden.fbx");
 	assert(hModel_ >= 0);
+
+	Instantiate<Player>(this);//Playerのインスタンス＝プレイヤーオブジェクトを作る
 
 }
 
@@ -33,7 +36,7 @@ void PlayScene::Update()//色々調整したり
 	float posY = cos(3.0f * time);
 
 	ot_.position_.x += posX;//情報をposition_.xに代入
-	ot_.position_.y += posY;
+	//ot_.position_.y += posY;
 
 
 	
