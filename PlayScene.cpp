@@ -1,6 +1,7 @@
 #include "PlayScene.h"
 #include "Engine\\Model.h"//画像を読み込むヘッダー
 #include "Player.h"
+#include "Bullet.h"
 
 namespace
 {
@@ -18,6 +19,7 @@ void PlayScene::Initialize()
 	assert(hModel_ >= 0);
 
 	Instantiate<Player>(this);//Playerのインスタンス＝プレイヤーオブジェクトを作る
+	Instantiate<Bullet>(this);
 
 }
 
