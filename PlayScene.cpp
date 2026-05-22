@@ -19,7 +19,7 @@ void PlayScene::Initialize()
 	assert(hModel_ >= 0);
 
 	Instantiate<Player>(this);//Playerのインスタンス＝プレイヤーオブジェクトを作る
-	Instantiate<Bullet>(this);
+	/*Instantiate<Bullet>(this);*/
 
 }
 
@@ -40,7 +40,7 @@ void PlayScene::Update()//色々調整したり
 	ot_.position_.x += posX;//情報をposition_.xに代入
 	//ot_.position_.y += posY;
 
-
+	
 	
 }
 

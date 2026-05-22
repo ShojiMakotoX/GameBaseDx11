@@ -19,7 +19,8 @@ void Bullet::Update()
 {
 	if (Input::IsKey(DIK_SPACE))
 	{
-		tr_.position_.z = tr_.position_.z += 0.25f;
+		//Instantiate<Bullet>(this);
+		tr_.position_.z = tr_.position_.z += 0.5f;
 	}
 }
 
