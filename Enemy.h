@@ -1,11 +1,11 @@
 #pragma once
 #include "Engine\\GameObject.h"
-class Bullet :
+class Enemy :
     public GameObject
 {
 public:
-	Bullet(GameObject* parent);
-	~Bullet();
+	Enemy(GameObject* parent);
+	~Enemy();
 
 	//初期化
 	void Initialize() override;
@@ -20,7 +20,6 @@ public:
 	void Release() override;
 private:
 	int hModel_;//モデルハンドル
-	Transform tr_;//トランスフォーム（アフィン返還のパラメータを保存している）
-	float speed_;//弾の速さ
+	Transform ot_;//トランスフォーム（アフィン返還のパラメータを保存している）
 };
 

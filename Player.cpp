@@ -19,7 +19,7 @@ void Player::Initialize()
 {
 	hModel_ = Model::Load("StarShip.fbx");
 	assert(hModel_ >= 0);
-	tr_.position_ = { 0.0f,-4.0f,10.0f };
+	tr_.position_ = { 0.0f,-4.0f,0.0f };
 }
 
 void Player::Update()
@@ -36,7 +36,7 @@ void Player::Update()
 	}
 	if (Input::IsKey(DIK_SPACE))
 	{
-		//Instantiate<Bullet>(this);
+		Instantiate<Bullet>(this);
 	}
 }
 
