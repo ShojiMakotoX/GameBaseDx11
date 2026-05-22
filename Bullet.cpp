@@ -15,7 +15,7 @@ void Bullet::Initialize()
 {
 	hModel_ = Model::Load("Bullet.fbx");
 	assert(hModel_ >= 0);
-	Player* player = static_cast <Player *>(FindObject("Player"));//FindGameObjectみたいなもの
+	//Player* player = static_cast <Player *>(FindObject("Player"));//FindGameObjectみたいなもの
 
 
 	//transform_.position_ = { 0.0f,-2.0f,10.0f };

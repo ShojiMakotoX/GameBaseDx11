@@ -36,9 +36,10 @@ void Player::Update()
 	}
 	if (Input::IsKeyDown(DIK_SPACE))
 	{
-		Instantiate<Bullet>(this);
+		Bullet *pBullet = Instantiate<Bullet>(GetParent());
+		pBullet->SetPosition(transform_.position_);
 	}
-	transform_.Calclation();
+	
 }
 
 void Player::Draw()
