@@ -20,6 +20,6 @@ public:
 	void Release() override;
 private:
 	int hModel_;//モデルハンドル
-	Transform ot_;//トランスフォーム（アフィン返還のパラメータを保存している）
+	
 };
 

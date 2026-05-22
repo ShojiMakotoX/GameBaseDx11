@@ -20,7 +20,7 @@ public:
 	void Release() override;
 private:
 	int hModel_;//モデルハンドル
-	Transform tr_;//トランスフォーム（アフィン返還のパラメータを保存している）
+	//Transform tr_;//トランスフォーム（アフィン返還のパラメータを保存している）
 	float speed_;//弾の速さ
 };
 

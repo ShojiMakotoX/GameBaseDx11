@@ -19,30 +19,31 @@ void Player::Initialize()
 {
 	hModel_ = Model::Load("StarShip.fbx");
 	assert(hModel_ >= 0);
-	tr_.position_ = { 0.0f,-4.0f,0.0f };
+	transform_.position_ = { 0.0f,0.0f,0.0f };
 }
 
 void Player::Update()
 {
 	if (Input::IsKey(DIK_LEFT) || Input::IsKey(DIK_A))
 	{
-		tr_.position_.x = tr_.position_.x -= 0.5f;
+		transform_.position_.x = transform_.position_.x -= 0.25f;
 		
 	}
 	if (Input::IsKey(DIK_RIGHT) || Input::IsKey(DIK_D))
 	{
-		tr_.position_.x = tr_.position_.x += 0.5f;
+		transform_.position_.x = transform_.position_.x += 0.25f;
 		
 	}
-	if (Input::IsKey(DIK_SPACE))
+	if (Input::IsKeyDown(DIK_SPACE))
 	{
 		Instantiate<Bullet>(this);
 	}
+	transform_.Calclation();
 }
 
 void Player::Draw()
 {
-	Model::SetTransform(hModel_, tr_);
+	Model::SetTransform(hModel_, transform_);
 	Model::Draw(hModel_);
 }
 
