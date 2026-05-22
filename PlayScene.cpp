@@ -15,10 +15,16 @@ PlayScene::PlayScene(GameObject* parent)
 
 void PlayScene::Initialize()
 {
-	
+	for (int i = 0;i < 15;i++)
+	{
+		float posX = ((float)rand() / RAND_MAX * 800.0f) - 400.0f;
+		Enemy* e = Instantiate<Enemy>(this);
+		e->SetPosition(posX, 0.0f, 20.0f);
+	}
+
 
 	Instantiate<Player>(this);//Playerのインスタンス＝プレイヤーオブジェクトを作る
-	Instantiate<Enemy>(this);
+	
 	//Instantiate<Bullet>(this);
 
 }

@@ -20,7 +20,7 @@ void Enemy::Initialize()
 {
 	hModel_ = Model::Load("Oden.fbx");
 	assert(hModel_ >= 0);
-	transform_.position_ = { 0.0f,0.0f,20.0f };//位置
+	//transform_.position_ = { 0.0f,0.0f,20.0f };//位置
 	transform_.scale_ = { 0.5f,0.5f,0.5f };//サイズ
 	transform_.rotate_ = { 0.0f,0.0f,0.0f };//回転
 
