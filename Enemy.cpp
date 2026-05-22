@@ -1,5 +1,6 @@
 #include "Enemy.h"
 #include "Engine\\Model.h"
+#include "Engine\\SphereCollider.h"
 
 namespace
 {
@@ -19,6 +20,12 @@ void Enemy::Initialize()
 {
 	hModel_ = Model::Load("Oden.fbx");
 	assert(hModel_ >= 0);
+	transform_.position_ = { 0.0f,0.0f,20.0f };//位置
+	transform_.scale_ = { 0.5f,0.5f,0.5f };//サイズ
+	transform_.rotate_ = { 0.0f,0.0f,0.0f };//回転
+
+	SphereCollider* collider = new SphereCollider(XMFLOAT3(0.0f, 0.0f, 0.0f), 1.0f);
+	AddCollider(collider);
 
 }
 
@@ -26,9 +33,7 @@ void Enemy::Update()
 {
 	static float time = 0.0f;//移動するときにかかる時間
 
-	transform_.position_ = { 0.0f,0.0f,20.0f };//位置
-	transform_.scale_ = { 0.5f,0.5f,0.5f };//サイズ
-	transform_.rotate_ = { 0.0f,0.0f,0.0f };//回転
+	
 
 	//ot_.rotate_.y += time;//回転させてみる
 	time += 0.025f;//増えていく割合
@@ -48,4 +53,13 @@ void Enemy::Draw()
 
 void Enemy::Release()
 {
+}
+
+void Enemy::OnCollision(GameObject* pTarget)
+{
+	if (pTarget->GetObjectName()=="Bullet")//もし、当たったオブジェクトがバレットならば
+	{
+		pTarget->KillMe();//バレットを消して
+		KillMe();//自分も消す
+	}
 }

@@ -22,11 +22,12 @@ void PlayScene::Initialize()
 
 }
 
-void PlayScene::Update()//色々調整したり
+void PlayScene::Update()
 {
+
 }
 
-void PlayScene::Draw()//トランスフォームをセットして描画するだけ
+void PlayScene::Draw()
 {
 }
 
