@@ -3,6 +3,7 @@
 #include "Player.h"
 #include "Bullet.h"
 #include "Enemy.h"
+#include "Engine\\SceneManager.h"
 
 namespace
 {
@@ -24,7 +25,11 @@ void PlayScene::Initialize()
 
 void PlayScene::Update()
 {
-
+	if (FindObject("Enemy") == nullptr)
+	{
+		SceneManager* pSceneManager = (SceneManager*)(this->GetParent());
+		pSceneManager->ChangeScene(SCENE_ID_CLEAR);
+	}
 }
 
 void PlayScene::Draw()
