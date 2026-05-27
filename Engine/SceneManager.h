@@ -7,7 +7,8 @@ enum SCENE_ID
 {
 	SCENE_ID_TEST = 0,
 	SCENE_ID_PLAY = 1,
-	SCENE_ID_CLEAR = 2
+	SCENE_ID_CLEAR = 2,
+	SCENE_ID_GAMEOVER = 3,
 };
 
 //-----------------------------------------------------------

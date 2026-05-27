@@ -19,6 +19,7 @@ Enemy::~Enemy()
 
 void Enemy::Initialize()
 {
+	
 	hModel_ = Model::Load("spaceShip.fbx");
 	assert(hModel_ >= 0);
 	//transform_.position_ = { 0.0f,0.0f,20.0f };//位置
@@ -27,9 +28,6 @@ void Enemy::Initialize()
 
 	SphereCollider* collider = new SphereCollider(XMFLOAT3(0.0f, 1.0f, 0.0f), 1.0f);
 	AddCollider(collider);
-
-	
-
 }
 
 void Enemy::Update()
