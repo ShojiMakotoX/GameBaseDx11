@@ -4,6 +4,7 @@
 #include "Bullet.h"
 #include "Enemy.h"
 #include "Engine\\SceneManager.h"
+#include "Engine\\Camera.h"
 
 namespace
 {
@@ -24,6 +25,9 @@ void PlayScene::Initialize()
 	Instantiate<Player>(this);//Playerのインスタンス＝プレイヤーオブジェクトを作る
 	
 	//Instantiate<Bullet>(this);
+
+	Camera::SetPosition(XMFLOAT3(0.0f, 5.0f, -10.0f));
+	Camera::SetTarget(XMFLOAT3(0.0f, 3.0f, 10.0f));
 
 }
 

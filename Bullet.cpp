@@ -2,6 +2,7 @@
 #include "Engine\\Model.h"
 #include "Player.h"
 #include "Engine\\SphereCollider.h"
+#include "Enemy.h"
 
 Bullet::Bullet(GameObject* parent)
 	:GameObject(parent, "Bullet"),hModel_(-1),speed_(0.5f)
