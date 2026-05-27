@@ -2,6 +2,7 @@
 #include "Engine\\Model.h"
 #include "Engine\\SphereCollider.h"
 
+
 namespace
 {
 	int WIN_WIDTH = 1500;
@@ -27,6 +28,8 @@ void Enemy::Initialize()
 	SphereCollider* collider = new SphereCollider(XMFLOAT3(0.0f, 1.0f, 0.0f), 1.0f);
 	AddCollider(collider);
 
+	
+
 }
 
 void Enemy::Update()
@@ -43,6 +46,8 @@ void Enemy::Update()
 
 	transform_.position_.x += posX;//情報をposition_.xに代入
 	//transform_.position_.y += posY;
+
+	
 
 	
 	
