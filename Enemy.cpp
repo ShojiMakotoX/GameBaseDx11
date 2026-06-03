@@ -1,6 +1,8 @@
 #include "Enemy.h"
 #include "Engine\\Model.h"
 #include "Engine\\SphereCollider.h"
+#include "Engine\\Input.h"
+#include "Bullet.h"
 
 
 namespace
@@ -45,7 +47,11 @@ void Enemy::Update()
 	transform_.position_.x += posX;//情報をposition_.xに代入
 	//transform_.position_.y += posY;
 
-	
+	if (Input::IsKeyDown(DIK_SPACE))
+	{
+		Bullet* pBullet = Instantiate<Bullet>(GetParent());
+		pBullet->SetPosition(transform_.position_);
+	}
 
 	
 	
@@ -63,7 +69,7 @@ void Enemy::Release()
 
 void Enemy::OnCollision(GameObject* pTarget)
 {
-	if (pTarget->GetObjectName()=="Bullet")//もし、当たったオブジェクトがバレットならば
+	if (pTarget->GetObjectName()=="PlayerBullet")//もし、当たったオブジェクトがバレットならば
 	{
 		pTarget->KillMe();//バレットを消して
 		KillMe();//自分も消す
