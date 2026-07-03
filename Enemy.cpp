@@ -22,7 +22,7 @@ Enemy::~Enemy()
 void Enemy::Initialize()
 {
 	
-	hModel_ = Model::Load("spaceShip.fbx");
+	hModel_ = Model::Load("spaceship.fbx");
 	assert(hModel_ >= 0);
 	//transform_.position_ = { 0.0f,0.0f,20.0f };//位置
 	transform_.scale_ = { 0.5f,0.5f,0.5f };//サイズ
@@ -47,11 +47,11 @@ void Enemy::Update()
 	transform_.position_.x += posX;//情報をposition_.xに代入
 	//transform_.position_.y += posY;
 
-	if (Input::IsKeyDown(DIK_SPACE))
+	/*if (Input::IsKeyDown(DIK_SPACE))
 	{
 		Bullet* pBullet = Instantiate<Bullet>(GetParent());
 		pBullet->SetPosition(transform_.position_);
-	}
+	}*/
 
 	
 	
@@ -69,7 +69,7 @@ void Enemy::Release()
 
 void Enemy::OnCollision(GameObject* pTarget)
 {
-	if (pTarget->GetObjectName()=="PlayerBullet")//もし、当たったオブジェクトがバレットならば
+	if (pTarget->GetObjectName()=="Bullet")//もし、当たったオブジェクトがバレットならば
 	{
 		pTarget->KillMe();//バレットを消して
 		KillMe();//自分も消す
